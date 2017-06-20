@@ -1,0 +1,15 @@
+<!--The whole content below can be removed with the new code.-->
+<div class="pages">
+    <button (click)="setPage(pageNumber - 1)"><<</button>
+    <div>{{pageNumber}}</div>
+    <button (click)="setPage(pageNumber + 1)">>></button>
+</div>
+<div class="container">
+    <div class="item" *ngFor="let icon of pagedItems; let i = index" [ngClass]="{'selected-icon': icon.selected}" (click)="selectItem(icon)">
+        <img class="small-icon" src="{{getIconUrl(icon)}} " />
+    </div>
+</div>
+
+
+<button (click)="show()">Generate </button>
+<textarea name="Text1" cols="40" rows="5" [(value)]="result"></textarea>
